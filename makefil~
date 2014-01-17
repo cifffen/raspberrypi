@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = helloworld.h funk.h
+OBJ = helloworld.o funk.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+run: $(OBJ)
+	gcc -o $@ $^ $(CLFAGS)
